@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostes Esportives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="balançTotalContainer">
+        <h2>Balanç Total: <span id="balançTotal">0 €</span></h2>
+    </div>
+    
+    <h1>Apostes Esportives</h1>
+
+    <div class="form-container">
+        <form id="formulariApostes">
+            <label for="import">Import:</label>
+            <input type="number" id="import" required>
+
+            <label for="quota">Quota:</label>
+            <input type="number" step="0.01" id="quota" required>
+
+            <label for="esport">Esport:</label>
+            <select id="esport" required>
+                <option value="futbol">Futbol</option>
+                <option value="bàsquet">Bàsquet</option>
+                <option value="tennis">Tennis</option>
+            </select>
+
+            <label for="resultat">Resultat:</label>
+            <select id="resultat" required>
+                <option value="guanyat">Guanyat</option>
+                <option value="perdut">Perdut</option>
+            </select>
+
+            <button type="submit">Guardar Aposta</button>
+        </form>
+    </div>
+
+    <h2>Historial d'Apostes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Import (€)</th>
+                <th>Quota</th>
+                <th>Esport</th>
+                <th>Resultat</th>
+                <th>Guany (€)</th>
+                <th>Acció</th>
+            </tr>
+        </thead>
+        <tbody id="historialApostes"></tbody>
+    </table>
+
+    <h2>Balanç Acumulat</h2>
+    <canvas id="graficaBalanç"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
